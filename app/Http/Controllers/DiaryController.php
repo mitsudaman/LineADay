@@ -14,7 +14,7 @@ class DiaryController extends Controller
     public function index()
     {
         // すべてのフォルダを取得する
-        $diaries = Diary::all();
+        $diaries = Diary::paginate(5);
 
         return view('diaries/index', [
             'diaries' => $diaries

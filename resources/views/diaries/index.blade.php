@@ -50,6 +50,9 @@
             </tbody>
           </table>
         </div>
+        <div class="justify-content-center">
+            {{ $diaries->links() }}
+        </div>
       </div>
       <div class="column col-md-3"></div>
     </div>
