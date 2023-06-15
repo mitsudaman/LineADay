@@ -41,7 +41,7 @@
                 </a>
                 </td>
                 <td class="col-md-1">
-                <a>
+                <a href="{{ route('diaries.delete', ['id' => $diary->id]) }}">
                   削除
                 </a>
                 </td>

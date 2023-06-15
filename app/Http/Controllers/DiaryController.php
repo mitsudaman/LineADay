@@ -65,4 +65,11 @@ class DiaryController extends Controller
 
         return redirect()->route('diaries.index');
     }
+
+    public function delete(int $id)
+    {
+        $diary = Diary::find($id);
+        $diary->delete();
+        return redirect()->route('diaries.index');
+    }
 }
