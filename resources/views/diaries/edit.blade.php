@@ -19,13 +19,16 @@
             @endif
             <form
                 action="{{ route('diaries.edit', ['id' => $dairy->id]) }}"
-                method="POST"
+                method="POST" enctype="multipart/form-data"
             >
               @csrf
               <div class="form-group">
                 <label for="title">日記</label>
                 <input type="text" class="form-control" name="content" id="content"
                        value="{{ old('content') ?? $dairy->content }}" />
+              </div>
+              <div>
+                <input type="file" name="image">
               </div>
               <div class="text-right">
                 <button type="submit" class="btn btn-primary">送信</button>

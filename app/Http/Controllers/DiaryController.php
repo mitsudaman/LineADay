@@ -31,6 +31,12 @@ class DiaryController extends Controller
         $diary = new Diary();
         $diary->content = $request->content;
 
+        $img = $request->file('image');
+        if (isset($img)) {
+            // storage > public > img配下に画像が保存される
+            $path = $img->store('img','public');
+            $diary->img_path = $path;
+        }
         $diary->save();
 
         return redirect()->route('diaries.index');
@@ -49,7 +55,12 @@ class DiaryController extends Controller
     {
         $diary = Diary::find($id);
         $diary->content = $request->content;
-
+        $img = $request->file('image');
+        if (isset($img)) {
+            // storage > public > img配下に画像が保存される
+            $path = $img->store('img','public');
+            $diary->img_path = $path;
+        }
         $diary->save();
 
         return redirect()->route('diaries.index');

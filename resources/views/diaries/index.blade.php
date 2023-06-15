@@ -18,7 +18,7 @@
           <table class="table">
             <thead>
             <tr>
-              <!-- <th>画像</th> -->
+              <th>画像</th>
               <th>日記</th>
               <th></th>
               <th></th>
@@ -27,13 +27,13 @@
             <tbody>
             @foreach($diaries as $diary)
               <tr>
-                <!-- <td class="col-md-2">
+                <td class="col-md-2">
                 @if($diary->img_path == null)
                   <img src="{{ asset('noimage.jpg') }}" width="50px" height="50px">
                 @else
                 <img src="{{ Storage::url($diary->img_path) }}" width="50px" height="50px">
                 @endif
-                </td> -->
+                </td>
                 <td class="col-md-8">{{ $diary->content }}</td>
                 <td class="col-md-1">
                 <a href="{{ route('diaries.edit', ['id' => $diary->id]) }}">
