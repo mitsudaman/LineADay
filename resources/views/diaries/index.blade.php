@@ -36,7 +36,7 @@
                 </td> -->
                 <td class="col-md-8">{{ $diary->content }}</td>
                 <td class="col-md-1">
-                <a>
+                <a href="{{ route('diaries.edit', ['id' => $diary->id]) }}">
                   編集
                 </a>
                 </td>
